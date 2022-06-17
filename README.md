@@ -52,3 +52,4 @@ name char(20) not null ,
     allergy char(10) not null ,
 date date
 );
+
