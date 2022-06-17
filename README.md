@@ -1,5 +1,4 @@
 #疫苗管理系统
-![img.png](img.png)
 
 # (creat database)
 
