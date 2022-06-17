@@ -13,4 +13,4 @@ def connect_DB(database,content):
 
 if __name__ == '__main__':
     database = "vaccine-test"
-    connect_DB(database=database,content="show tables;")
+    cd =  connect_DB(database=database,content="SELECT * FROM user_info WHERE user_name = '123';")
