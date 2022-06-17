@@ -1,7 +1,7 @@
-#疫苗管理系统
+疫苗管理系统
 
-# (creat database)
-
+creat database 
+sql 
 create table vaccine_info(
     vaccine_num    char(50) not null primary key,
     vaccine_name   char(50) not null,
