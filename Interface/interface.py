@@ -1,9 +1,8 @@
 # -- ** -- UTF-8
 import tkinter as tk
 import tkinter.messagebox
-from Tools.scripts.serve import app
 from db.connectDB import connect_DB
-
+app = tk.Tk()
 class GUI():
 
     def mainInterface(self):     #主界面
@@ -40,7 +39,7 @@ class GUI():
                     tkinter.messagebox.showerror(title="错误", message="密码错误！")
             except TypeError:
                 tkinter.messagebox.showerror(title="错误", message="请注册后再进行登录！")
-        tk.Button(self.login(), text="登录", bg='white', font=("Arial,9"), width=12, height=0, command=user_check).place(x=250, y=250)
+        tk.Button(login, text="登录", bg='white', font=("Arial,9"), width=12, height=0, command=user_check).place(x=250, y=250)
 
     def register(self):
         register = tk.Toplevel(app)
