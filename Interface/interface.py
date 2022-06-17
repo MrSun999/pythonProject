@@ -6,10 +6,12 @@ app = tk.Tk()
 class GUI():
 
     def mainInterface(self):     #主界面
-        tk.Button(app, text='登录', bg='white', font=("Arial,12"), width=12, height=1, command=self.login).place(x=260,y=200)
-        tk.Button(app, text='注册', bg='white', font=("Arial,12"), width=12, height=1, command=self.register).place(x=260,y=240)
-        tk.Button(app, text='退出', bg='white', font=("Arial,12"), width=12, height=1, command=self.quit_mainloop).place(x=260, y=280)
-
+        loginbutten =  tk.Button(app, text='登录', bg='white', font=("Arial,12"), width=12, height=1, command=self.login)
+        registerbutten = tk.Button(app, text='注册', bg='white', font=("Arial,12"), width=12, height=1, command=self.register)
+        quitmainloopbutten = tk.Button(app, text='退出', bg='white', font=("Arial,12"), width=12, height=1, command=self.quit_mainloop)
+        loginbutten.place(x=260, y=200), registerbutten.place(x=260,y=240), quitmainloopbutten.place(x=260, y=280)
+        loginbutten.pack(), registerbutten.pack(), quitmainloopbutten.pack()
+        app.mainloop()
     def login(self):
         login = tk.Toplevel(app)
         login.title('用户登录')
