@@ -176,10 +176,50 @@ class GUI():
         pass
 
     def vaccineDistrInfoQuery(self):
-        pass
+        query = tk.Toplevel(app)
+        query.title('信息查询')
+        query.geometry("600x400")
+        entry = tk.Entry(query, width=30)
+        entry.pack()
+        entry.place(x=200, y=80)
+        tk.Label(query, text="请输入疫苗分配单号：", font=("Arial", 9)).place(x=50, y=80)
+        tk.Label(query, text='查询结果：', font=('Arial', 9)).place(x=50, y=120)
+        text1 = tk.Text(query, width=50, height=20)
+        text1.pack()
+        text1.place(x=150, y=120)
+
+        def base_query():
+            vaccine_distr_num = entry.get()
+            print(vaccine_distr_num)
+            content = "SELECT * FROM vaccine_distr_info WHERE vaccine_distr_num = %s;" % vaccine_distr_num
+            data = connect_DB(database="vaccine-test", content=content)
+            text1.delete(1.0, "end")
+            text1.insert(chars="{}".format(data), index="insert")
+
+        tk.Button(query, text='查询', bg='white', font=("Arial,12"), width=9, height=0, command=base_query).place(x=450,y=75)
 
     def vaccinationMaintenanceInfoQuery(self):
-        pass
+        query = tk.Toplevel(app)
+        query.title('疫苗养护信息查询')
+        query.geometry("600x400")
+        entry = tk.Entry(query, width=30)
+        entry.pack()
+        entry.place(x=200, y=80)
+        tk.Label(query, text="请输入疫苗养护批号：", font=("Arial", 9)).place(x=50, y=80)
+        tk.Label(query, text='查询结果：', font=('Arial', 9)).place(x=50, y=120)
+        text1 = tk.Text(query, width=50, height=20)
+        text1.pack()
+        text1.place(x=150, y=120)
+
+        def base_query():
+            vaccine_maintenance_num = entry.get()
+            print(vaccine_maintenance_num)
+            content = "SELECT * FROM vaccine_maintenance_info WHERE vaccine_maintenance_num = %s;" % vaccine_maintenance_num
+            data = self.connect_DBS(database="vaccine_info", content=content)
+            text1.delete(1.0, "end")
+            text1.insert(chars="{}".format(data), index="insert")
+
+        tk.Button(query, text='查询', bg='white', font=("Arial,12"), width=9, height=0, command=base_query).place(x=450,y=75)
 
     def vaccinationPersonInfoQuery(self):
         pass
