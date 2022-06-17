@@ -1,13 +1,12 @@
 # -- ** -- UTF-8
 import tkinter as tk
 import tkinter.messagebox
-from atexit import register
 from Tools.scripts.serve import app
 from db.connectDB import connect_DB
 
 class GUI():
 
-    def mainInterface(self):
+    def mainInterface(self):     #主界面
         tk.Button(app, text='登录', bg='white', font=("Arial,12"), width=12, height=1, command=self.login).place(x=260,y=200)
         tk.Button(app, text='注册', bg='white', font=("Arial,12"), width=12, height=1, command=self.register).place(x=260,y=240)
         tk.Button(app, text='退出', bg='white', font=("Arial,12"), width=12, height=1, command=self.quit_mainloop).place(x=260, y=280)
@@ -44,7 +43,7 @@ class GUI():
         tk.Button(self.login(), text="登录", bg='white', font=("Arial,9"), width=12, height=0, command=user_check).place(x=250, y=250)
 
     def register(self):
-        register = tkinter.Toplevel(app)
+        register = tk.Toplevel(app)
         register.title('用户注册')
         register.geometry("600x400")
         tk.Label(register, text="欢迎注册", font=("KaiTi", 40)).place(x=200, y=20)
@@ -67,4 +66,41 @@ class GUI():
                 tkinter.messagebox.showinfo(title="信息", message="注册成功！")
         tk.Button(register, text="注册", bg='white', font=("Arial,9"), width=12, height=0, command=user_register).place(x=250,y=250)
     def quit_mainloop(self):
+        pass
+
+    def options(self):     #功能区主界面
+        options = tk.Toplevel(app)
+        options.title('功能选项')
+        options.geometry("600x500")
+        tk.Label(options, text="欢迎使用！", font=("KaiTi", 40)).place(x=180, y=15)
+        tk.Button(options, text='新建疫苗信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.add_vacc_info).place(x=100, y=100)
+        tk.Button(options, text='新建疫苗分配信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.add_vaccine_distr_info).place(x=100, y=160)
+        tk.Button(options, text='新建疫苗养护信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.add_vaccine_maintenance_info).place(x=100, y=220)
+        tk.Button(options, text='新建接种人员信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.add_vaccination_person_info).place(x=100, y=280)
+        tk.Button(options, text='查询疫苗分配信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.vaccine_distr_info_query).place(x=100, y=340)
+        tk.Button(options, text='查询疫苗养护信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.vaccination_maintenance_info_query).place(x=320, y=100)
+        tk.Button(options, text='查询接种人员信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.vaccination_person_info_query).place(x=320, y=160)
+        tk.Button(options, text='查询疫苗信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.vaccine_info_query).place(x=320, y=220)
+        tk.Button(options, text='修改疫苗信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.modify_vaccine_info).place(x=320, y=280)
+        tk.Button(options, text='删除疫苗信息', bg='white', font=("Arial,12"), width=20, height=2,command=self.del_vaccine_info).place(x=320, y=340)
+
+    def add_vacc_info(self):
+        pass
+    def add_vaccine_distr_info(self):
+        pass
+    def add_vaccine_maintenance_info(self):
+        pass
+    def add_vaccination_person_info(self):
+        pass
+    def vaccine_distr_info_query(self):
+        pass
+    def vaccination_maintenance_info_query(self):
+        pass
+    def vaccination_person_info_query(self):
+        pass
+    def vaccine_info_query(self):
+        pass
+    def modify_vaccine_info(self):
+        pass
+    def del_vaccine_info(self):
         pass
