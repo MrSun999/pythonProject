@@ -1,7 +1,7 @@
 # -- ** -- UTF-8
 import tkinter as tk
 import tkinter.messagebox
-from db.connectDB import connect_DB
+from Interface.db.connectDB import connect_DB
 
 app = tkinter.Tk()
 
